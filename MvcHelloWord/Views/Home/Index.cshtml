@@ -1,0 +1,30 @@
+﻿@model MvcHelloWord.Models.Person
+@{
+    ViewBag.Title = "ViewPage1";
+}
+<div>
+    @using (Html.BeginForm("SendInforomation", "Home"))
+    {
+
+        <p>
+            Your Name:@Html.TextBoxFor(x => x.Name)
+        </p>
+        <p>
+            Your Phone:@Html.TextBoxFor(x => x.Phone)
+        </p>
+        <p>
+            Your Email:@Html.TextBoxFor(x => x.Email)
+        </p>
+        <p>
+            Gerder:@Html.DropDownListFor(x => x.Gender,
+new[] {
+        new SelectListItem() { Text = "I am boy", Selected = true, Value = "male" },
+        new SelectListItem() { Text = "I am girl", Selected = false, Value = "female" },
+}, "Please select One")
+        </p>
+        <p>
+            <input type="submit" value="提交" />
+        </p>
+    }
+
+</div>
